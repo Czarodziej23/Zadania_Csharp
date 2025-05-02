@@ -1,0 +1,50 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Podaj pierwszą liczbę:");
+        double a = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Podaj drugą liczbę:");
+        double b = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Wybierz operację (+, -, *, /):");
+        string operacja = Console.ReadLine();
+
+        double wynik = 0;
+
+        if (operacja == "+")
+        {
+            wynik = a + b;
+        }
+        else if (operacja == "-")
+        {
+            wynik = a - b;
+        }
+        else if (operacja == "*")
+        {
+            wynik = a * b;
+        }
+        else if (operacja == "/")
+        {
+            if (b != 0)
+            {
+                wynik = a / b;
+            }
+            else
+            {
+                Console.WriteLine("Nie można dzielić przez zero.");
+                return;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Nieznana operacja.");
+            return;
+        }
+
+        Console.WriteLine("Wynik: " + wynik);
+    }
+}

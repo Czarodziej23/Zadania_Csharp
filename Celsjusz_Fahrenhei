@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Wybierz kierunek konwersji:");
+        Console.WriteLine("C - Celsjusz → Fahrenheit");
+        Console.WriteLine("F - Fahrenheit → Celsjusz");
+        string wybor = Console.ReadLine().ToUpper();
+
+        if (wybor == "C")
+        {
+            Console.WriteLine("Podaj temperaturę w stopniach Celsjusza:");
+            double c = Convert.ToDouble(Console.ReadLine());
+            double f = c * 1.8 + 32;
+            Console.WriteLine("Temperatura w stopniach Fahrenheita: " + Math.Round(f, 2));
+        }
+        else if (wybor == "F")
+        {
+            Console.WriteLine("Podaj temperaturę w stopniach Fahrenheita:");
+            double f = Convert.ToDouble(Console.ReadLine());
+            double c = (f - 32) / 1.8;
+            Console.WriteLine("Temperatura w stopniach Celsjusza: " + Math.Round(c, 2));
+        }
+        else
+        {
+            Console.WriteLine("Nieprawidłowy wybór.");
+        }
+    }
+}

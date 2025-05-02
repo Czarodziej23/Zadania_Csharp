@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Podaj liczbę ocen:");
+        int liczbaOcen = Convert.ToInt32(Console.ReadLine());
+        double suma = 0;
+
+        for (int i = 1; i <= liczbaOcen; i++)
+        {
+            Console.WriteLine("Podaj ocenę " + i + ":");
+            double ocena = Convert.ToDouble(Console.ReadLine());
+            suma += ocena;
+        }
+
+        double srednia = suma / liczbaOcen;
+        Console.WriteLine("Średnia ocen: " + Math.Round(srednia, 2));
+
+        if (srednia >= 3.0)
+            Console.WriteLine("Uczeń zaliczył przedmiot.");
+        else
+            Console.WriteLine("Uczeń nie zaliczył przedmiotu.");
+    }
+}
